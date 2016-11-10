@@ -13,7 +13,7 @@ template '/srv/www/wordpress/current/.htaccess' do
 end
 
 directory '/srv/www/wordpress/current/wp-content/uploads' do
-  owner 'deploy'
+  owner 'www-data'
   group 'www-data'
   mode '0755'
   action :create
