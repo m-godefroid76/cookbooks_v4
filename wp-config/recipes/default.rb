@@ -11,3 +11,10 @@ template '/srv/www/wordpress/current/.htaccess' do
   group 'root'
   mode '0444'
 end
+
+directory '/srv/www/wordpress/current/wp-content/uploads' do
+  owner 'deploy'
+  group 'www-data'
+  mode '0755'
+  action :create
+end
