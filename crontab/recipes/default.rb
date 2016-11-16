@@ -9,12 +9,12 @@ cron "cronreviews" do
     command "curl http://#{ node['DOMAIN_NAME'] }/wp-content/plugins/cron_reviews/cron.php > /var/log/cron.log 1>&1"
 end
 
-# cron "logrotate" do
-#     action :create
-#     minute "0"
-#     hour '3'
-#     command '/usr/sbin/logrotate /etc/logrotate.conf > /var/log/cron.log 1>&1'
-# end
+cron "logrotate" do
+    action :create
+    minute "0"
+    hour '3'
+    command '/usr/sbin/logrotate /etc/logrotate.conf > /var/log/cron.log 1>&1'
+end
 
 # cron "backup-db" do
 #     action :create
