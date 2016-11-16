@@ -18,3 +18,10 @@ directory '/srv/www/wordpress/current/wp-content/uploads' do
   mode '0755'
   action :create
 end
+
+template '/srv/www/wordpress/current/wp-cron-mu.php' do
+  source 'wp-cron-mu.php.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+end
