@@ -6,7 +6,7 @@ end
 
 cron "cronreviews" do
     minute "*/5"
-    command 'curl http://\'#{node['DOMAIN_NAME']}\'/wp-content/plugins/cron_reviews/cron.php > /var/log/cron.log 1>&1'
+    command 'curl http://"#{node['DOMAIN_NAME']}"/wp-content/plugins/cron_reviews/cron.php > /var/log/cron.log 1>&1'
 end
 
 # cron "logrotate" do
