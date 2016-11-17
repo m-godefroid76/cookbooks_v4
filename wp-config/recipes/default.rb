@@ -25,3 +25,9 @@ template '/srv/www/wordpress/current/wp-cron-mu.php' do
   group 'root'
   mode '0644'
 end
+
+bash "Configure TimeZone Brussels" do
+  user 'root'
+  command 'sudo export TZ=Europe/Brussels'
+  action :nothing
+end
