@@ -28,6 +28,7 @@ end
 
 bash "Configure TimeZone Brussels" do
   user 'root'
-  command 'export TZ=Europe/Brussels'
-  action :nothing
+  code <<-EOH
+  export TZ=Europe/Brussels
+  EOH
 end
