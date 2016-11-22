@@ -16,15 +16,3 @@ template '/srv/www/wordpress/current/wp-content/w3tc-config/index.html' do
   group 'www-data'
   mode '0777'
 end
-
-node[:deploy].each do |application, deploy|
-  www_folder = "/srv/www/wordpress/current/wp-content/w3tc-config"
-  execute "chown -R www-data:www-data #{www_folder}" do
-  end
-end
-
-node[:deploy].each do |application, deploy|
-  www_folder = "/srv/www/wordpress/current/wp-content/w3tc-config"
-  execute "chmod -R 777 #{www_folder}" do
-  end
-end
