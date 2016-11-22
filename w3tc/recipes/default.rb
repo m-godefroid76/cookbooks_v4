@@ -11,7 +11,7 @@ template '/srv/www/wordpress/current/wp-content/w3tc-config/master.json' do
 end
 
 template '/srv/www/wordpress/current/wp-content/object-cache.php' do
-  source 'master.json.erb'
+  source 'object-cache.php.erb'
   owner 'www-data'
   group 'www-data'
   mode '0777'
