@@ -17,6 +17,13 @@ template '/srv/www/wordpress/current/wp-content/w3tc-config/index.html' do
   mode '0777'
 end
 
+directory '/srv/www/wordpress/current/wp-content/w3tc-config' do
+  owner 'www-data'
+  group 'www-data'
+  mode '0777'
+  action :create
+end
+
 node[:deploy].each do |application, deploy|
   www_folder = "/srv/www/wordpress/current/wp-content/w3tc-config"
   execute "chown -R www-data:www-data #{www_folder}" do
