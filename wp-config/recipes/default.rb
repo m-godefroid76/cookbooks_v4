@@ -26,6 +26,13 @@ directory '/srv/www/wordpress/current/wp-content/cache' do
   action :create
 end
 
+directory '/srv/www/wordpress/current/wp-content/themes/altair/cache' do
+  owner 'www-data'
+  group 'www-data'
+  mode '0777'
+  action :create
+end
+
 # directory '/srv/www/wordpress/current/wp-content/cache/w3tc-config' do
 #   owner 'www-data'
 #   group 'www-data'
