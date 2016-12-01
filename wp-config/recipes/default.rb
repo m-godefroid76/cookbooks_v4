@@ -54,6 +54,20 @@ directory '/srv/www/wordpress/current/wp-content/wflogs' do
   action :create
 end
 
+directory '/srv/www/wordpress/current/wp-content/plugins/wordfence/tmp' do
+  owner 'www-data'
+  group 'www-data'
+  mode '0777'
+  action :create
+end
+
+directory '/srv/www/wordpress/current/wp-content/wfcache' do
+  owner 'www-data'
+  group 'www-data'
+  mode '0777'
+  action :create
+end
+
 node[:deploy].each do |application, deploy|
   www_folder = "/srv/www/wordpress/current/wp-content/wflogs"
   execute "chown -R www-data:www-data #{www_folder}" do
