@@ -46,3 +46,9 @@ template '/srv/www/wordpress/current/wp-cron-mu.php' do
   group 'root'
   mode '0644'
 end
+
+node[:deploy].each do |application, deploy|
+  www_folder = "/srv/www/wordpress/current/wp-content/wflogs"
+  execute "chown -R www-data:www-data #{www_folder}" do
+  end
+end
